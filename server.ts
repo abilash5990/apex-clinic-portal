@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json({ limit: "15mb" })); // allow generous payload for reports/images
-const PORT = 3000;
+const PORT = 3001;
 
 const apiKey = process.env.GEMINI_API_KEY;
 
