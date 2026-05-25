@@ -1,0 +1,6 @@
+{
+  "name": "Apex Clinic Portal",
+  "description": "Board-certified doctor scheduling and secure HIPAA-compliant telehealth simulation, including real-time clinical AI symptom checkers and translator report summaries.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
