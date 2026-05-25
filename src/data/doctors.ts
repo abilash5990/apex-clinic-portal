@@ -1,4 +1,4 @@
-import { Doctor, BlogArticle } from '../types';
+import { Doctor, BlogArticle, Testimonial } from '../types';
 
 export const SPECIALIZATIONS = [
   'General Medicine',
@@ -46,7 +46,8 @@ export const CLINICAL_DOCTORS: Doctor[] = [
     location: 'Metropolitan Health Center, Suite 402',
     online: true,
     offline: true,
-    bio: 'Dr. Jenkins specializes in comprehensive adult care, preventive medicine, and chronic disease management. Recognized multiple times as a Top Clinician in Internal Medicine.'
+    bio: 'Dr. Jenkins specializes in comprehensive adult care, preventive medicine, and chronic disease management. Recognized multiple times as a Top Clinician in Internal Medicine.',
+    featured: true
   },
   {
     id: 'doc-2',
@@ -80,7 +81,8 @@ export const CLINICAL_DOCTORS: Doctor[] = [
     location: 'Heart & Vascular Institute, Room 101',
     online: false,
     offline: true,
-    bio: 'Renowned expert in interventional cardiology and cardiac failure prevention. Devoted to patient-centric treatment frameworks with evidence-based diagnostics.'
+    bio: 'Renowned expert in interventional cardiology and cardiac failure prevention. Devoted to patient-centric treatment frameworks with evidence-based diagnostics.',
+    featured: true
   },
   {
     id: 'doc-4',
@@ -114,7 +116,8 @@ export const CLINICAL_DOCTORS: Doctor[] = [
     location: 'NeuroScience Research Hospital, Level 3',
     online: true,
     offline: false,
-    bio: 'Lead investigator in neurological rehabilitation and cognitive care. Dr. Martinez treats migraine, sleep disorders, and complex epilepsy syndromes.'
+    bio: 'Lead investigator in neurological rehabilitation and cognitive care. Dr. Martinez treats migraine, sleep disorders, and complex epilepsy syndromes.',
+    featured: true
   },
   {
     id: 'doc-6',
@@ -165,7 +168,8 @@ export const CLINICAL_DOCTORS: Doctor[] = [
     location: 'Patel Advanced Eye Center & Laser Clinic',
     online: true,
     offline: true,
-    bio: 'Highly trained micro-surgeon specializing in laser vision correction, advanced cataract procedures, and diabetic retinopathy screenings.'
+    bio: 'Highly trained micro-surgeon specializing in laser vision correction, advanced cataract procedures, and diabetic retinopathy screenings.',
+    featured: true
   }
 ];
 
@@ -239,4 +243,58 @@ export const BLOOD_BANKS = [
   { type: 'A-Positive', units: '34 bags remaining', urgency: 'Standard Supply', color: 'text-green-500' },
   { type: 'B-Negative', units: '4 bags remaining', urgency: 'Urgent Alert', color: 'text-amber-500' },
   { type: 'AB-Positive', units: '21 bags remaining', urgency: 'Fully Stocked', color: 'text-green-500' }
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'test-1',
+    name: 'Eleanor Vance',
+    age: 62,
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200',
+    condition: 'Cardiovascular Hypertension',
+    doctor: 'Dr. Elena Rostova',
+    quote: 'Suriya made it seamless to monitor my cardiac telemetry. The AI report helper translated my blood scans into words I could actually comprehend. Dr. Elena gave me peace of mind.',
+    star: 5
+  },
+  {
+    id: 'test-2',
+    name: 'Gabriel Martinez',
+    age: 28,
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    condition: 'Acute Dermatological Shingles',
+    doctor: 'Dr. Aaron Chen',
+    quote: 'Excellent UI. Scheduled my video consult within two clicks. My telehealth room was robust, and Dr. Chen prescribed my ointment digitally. Seamless experience!',
+    star: 5
+  },
+  {
+    id: 'test-3',
+    name: 'Priya Sharma',
+    age: 35,
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
+    condition: 'Pediatric Consultation for Son',
+    doctor: 'Dr. Marcus Vance',
+    quote: 'Dr. Vance was incredibly patient with my 3-year-old. The video consultation felt as personal as an in-person visit. Highly recommend for any parent!',
+    star: 5
+  },
+  {
+    id: 'test-4',
+    name: 'Robert Kim',
+    age: 45,
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200',
+    condition: 'Chronic Migraine Management',
+    doctor: 'Dr. Sophia Martinez',
+    quote: 'After years of suffering, Dr. Martinez finally helped me find a treatment plan that works. The AI symptom checker pointed me to neurology right away. Life-changing platform.',
+    star: 5
+  }
+];
+
+export const INSURANCE_PARTNERS = [
+  'Aetna',
+  'BlueCross BlueShield',
+  'UnitedHealthcare',
+  'Cigna',
+  'Humana',
+  'Kaiser Permanente',
+  'Anthem',
+  'Medicare'
 ];

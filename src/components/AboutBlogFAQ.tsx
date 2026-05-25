@@ -3,7 +3,7 @@ import {
   BookOpen, Star, Award, Heart, MessageSquare, ChevronDown, Check,
   Activity, ArrowUpRight, ShieldCheck, Flame, BookText
 } from 'lucide-react';
-import { HEALTH_BLOGS, CORE_FAQS } from '../data/doctors';
+import { HEALTH_BLOGS, CORE_FAQS, TESTIMONIALS } from '../data/doctors';
 
 interface AboutProps {
   accessibilityFontSize: 'standard' | 'large' | 'extra-large';
@@ -28,25 +28,7 @@ export default function AboutBlogFAQ({ accessibilityFontSize }: AboutProps) {
   // FAQ Accordions active tracking
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
-  // Client testimonies list
-  const TESTIMONIALS = [
-    {
-      name: 'Eleanor Vance',
-      age: 62,
-      condition: 'Cardiovascular Hypertension',
-      doctor: 'Dr. Elena Rostova',
-      quote: 'ApexClinic made it seamless to monitor my cardiac telemetry. The AI report helper translated my blood scans into words I could actually comprehend. Dr. Elena gave me peace of mind.',
-      star: 5
-    },
-    {
-      name: 'Gabriel Martinez',
-      age: 28,
-      condition: 'Acute Dermatological Shingles',
-      doctor: 'Dr. Aaron Chen',
-      quote: 'Excellent UI. Scheduled my video consult within two clicks. My telehealth room was robust, and Dr. Chen prescribed my ointment digitally. Seamless experience!',
-      star: 5
-    }
-  ];
+  const displayTestimonials = TESTIMONIALS.slice(0, 2);
 
   const textScaleClass = {
     'standard': 'text-sm',
@@ -158,10 +140,10 @@ export default function AboutBlogFAQ({ accessibilityFontSize }: AboutProps) {
             </div>
 
             <div className="space-y-3">
-              {TESTIMONIALS.map((test, index) => (
+              {displayTestimonials.map((test) => (
                 <div 
-                  key={index}
-                  className="rounded-2xl border border-gray-150 bg-white p-5 shadow-sm dark:bg-gray-900 dark:border-gray-850"
+                  key={test.id}
+                  className="rounded-2xl border border-gray-150 bg-white p-5 shadow-sm dark:bg-gray-900 dark:border-gray-800"
                 >
                   <div className="flex items-center space-x-1.5 mb-2.5">
                     {[...Array(test.star)].map((_, i) => (

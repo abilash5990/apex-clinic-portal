@@ -4,16 +4,28 @@ export interface Doctor {
   photo: string;
   degree: string;
   specialization: string;
-  experience: number; // in years
+  experience: number;
   rating: number;
   reviewsCount: number;
   availableTiming: string;
-  availableDays: string[]; // e.g., ["Mon", "Wed", "Fri"]
+  availableDays: string[];
   consultationFee: number;
   location: string;
   online: boolean;
   offline: boolean;
   bio: string;
+  featured?: boolean;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  age: number;
+  photo: string;
+  condition: string;
+  doctor: string;
+  quote: string;
+  star: number;
 }
 
 export type Specialization = 

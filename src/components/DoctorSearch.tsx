@@ -353,15 +353,15 @@ export default function DoctorSearch({
                 {filteredDoctors.map(doctor => (
                   <div 
                     key={doctor.id}
-                    className="flex flex-col justify-between rounded-2xl border border-gray-150/80 bg-white p-5 shadow-sm hover:shadow-md transition-all dark:border-gray-850 dark:bg-gray-900"
+                    className="flex flex-col justify-between rounded-2xl border border-gray-150/80 bg-white p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-blue-200/50 dark:hover:border-blue-800/50 transition-all duration-300 dark:border-gray-850 dark:bg-gray-900"
                   >
                     <div>
                       {/* Doctor Heading Profile (photo, title, info) */}
                       <div className="flex space-x-4 mb-4">
                         <img 
                           src={doctor.photo} 
-                          alt={doctor.name} 
-                          className="h-16 w-16 rounded-xl object-cover border border-gray-150 dark:border-gray-850"
+                          alt={`${doctor.name}, ${doctor.specialization} specialist`} 
+                          className="h-16 w-16 rounded-xl object-cover border border-gray-150 dark:border-gray-800"
                           referrerPolicy="no-referrer"
                         />
                         <div className="flex-1">
@@ -374,8 +374,7 @@ export default function DoctorSearch({
                         </div>
                       </div>
 
-                      {/* Bio notes */}
-                      <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3 mb-4 font-normal">
+                      <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed line-clamp-3 mb-4">
                         {doctor.bio}
                       </p>
 
@@ -424,7 +423,7 @@ export default function DoctorSearch({
                       </div>
                       <button
                         onClick={() => startBooking(doctor)}
-                        className="rounded-lg bg-blue-100 hover:bg-blue-600 hover:text-white px-3.5 py-2.5 text-xs font-bold tracking-wide text-blue-700 transition-all text-center"
+                        className="rounded-lg bg-blue-600 hover:bg-blue-700 px-3.5 py-2.5 text-xs font-bold tracking-wide text-white shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 text-center cursor-pointer active:scale-95"
                       >
                         Book Now
                       </button>

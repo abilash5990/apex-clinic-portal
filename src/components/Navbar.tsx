@@ -83,7 +83,7 @@ export default function Navbar({
   const unreadCount = notifications.filter(n => n.unread).length;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200/80 bg-white/80 backdrop-blur-md transition-colors duration-200 dark:border-gray-800 dark:bg-gray-950/80">
+    <header role="banner" className="sticky top-0 z-50 w-full border-b border-gray-200/80 bg-white/80 backdrop-blur-md transition-colors duration-200 dark:border-gray-800 dark:bg-gray-950/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Hospital Branding */}
@@ -93,7 +93,7 @@ export default function Navbar({
           </div>
           <div>
             <span className="font-display text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-              APEX<span className="text-blue-600">CLINIC</span>
+              SURI<span className="text-blue-600">YA</span>
             </span>
             <div className="flex items-center space-x-1">
               <ShieldCheck className="h-3 w-3 text-emerald-500" />
@@ -102,8 +102,7 @@ export default function Navbar({
           </div>
         </div>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex space-x-1 lg:space-x-3">
+        <nav role="navigation" aria-label="Main navigation" className="hidden md:flex space-x-1 lg:space-x-3">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -187,6 +186,7 @@ export default function Navbar({
             <button
               onClick={() => setTheme('light')}
               className={`p-1.5 rounded-full transition-all ${theme === 'light' ? 'bg-white text-amber-500 shadow-sm' : 'text-gray-400'}`}
+              aria-label="Switch to light theme"
               title="Light Theme"
             >
               <Sun className="h-4 w-4" />
@@ -194,25 +194,26 @@ export default function Navbar({
             <button
               onClick={() => setTheme('dark')}
               className={`p-1.5 rounded-full transition-all ${theme === 'dark' ? 'bg-gray-950 text-blue-400 shadow-sm' : 'text-gray-500'}`}
+              aria-label="Switch to dark theme"
               title="Dark Theme"
             >
               <Moon className="h-4 w-4" />
             </button>
           </div>
 
-          {/* Accessibility Settings Toggle */}
           <button
             onClick={() => setShowSettingsDrawer(!showSettingsDrawer)}
             className={`p-2 rounded-lg transition-colors ${showSettingsDrawer ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30' : 'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900'}`}
+            aria-label="Accessibility settings"
             title="Accessibility Controls"
           >
             <Type className="h-5 w-5" />
           </button>
 
-          {/* Mobile Menu Icon */}
           <button
             onClick={() => setShowMobileMenu(!showMobileMenu)}
             className="p-2 md:hidden text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-950 rounded-lg"
+            aria-label={showMobileMenu ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {showMobileMenu ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
